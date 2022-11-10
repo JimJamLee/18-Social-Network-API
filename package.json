@@ -2,7 +2,7 @@
     "name": "18-Social-Network-API",
     "version": "1.0.0",
     "description": "Mongoose back-end project - Main",
-    "main": "server.js",
+    "main": "index.js",
     "license": "",
     "scripts": {
       "start": "node index",
