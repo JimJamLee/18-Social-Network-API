@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, Types } = require('mongoose');
 const moment = require('moment');
 
 // Schema to create Reaction subdocument to be used in the 'Thought' model
@@ -6,7 +6,7 @@ const reactionSchema = new Schema(
   {
     reactionId: {
         type: Schema.Types.ObjectId,
-        default: new Types.ObjectId(),
+        default: () => new Types.ObjectId(),
     },
     reactionBody:{
         type: String,
@@ -27,7 +27,6 @@ const reactionSchema = new Schema(
     toJSON: {
       getters: true,
     },
-    id: false,
   }
 );
 

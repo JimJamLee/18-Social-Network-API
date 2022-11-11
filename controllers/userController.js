@@ -75,13 +75,13 @@ module.exports = {
   addFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
-      { $addToSet: { friends: req.params.friendID } },
+      { $addToSet: { friends: req.params.friendId } },
       { new: true }
     )
       .then((user) =>
         !user
           ? res.status(404).json({ message: 'No user with that ID' })
-          : res.json(student)
+          : res.json(user)
       )
       .catch((err) => {
         console.log(err);
